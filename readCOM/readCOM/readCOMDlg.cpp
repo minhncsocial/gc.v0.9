@@ -175,6 +175,8 @@ static void DataReceivedHandler(Object^ sender, SerialDataReceivedEventArgs^ e)
 
 void CreadCOMDlg::OnBnClickedButton1()
 {
+	UpdateData(true);
+	
 	mySerialPort = gcnew SerialPort("COM2");
 
 	mySerialPort->BaudRate = 9600;
@@ -189,6 +191,8 @@ void CreadCOMDlg::OnBnClickedButton1()
 	mySerialPort->Open();
 
 	myfile.open("data.csv");
+	
+	UpdateData(false);
 }
 
 
